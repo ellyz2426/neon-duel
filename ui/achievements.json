@@ -1,0 +1,592 @@
+{
+  "element": {
+    "sourceTag": "container",
+    "type": "custom",
+    "children": [
+      {
+        "sourceTag": "text",
+        "type": "custom",
+        "children": [
+          "ACHIEVEMENTS"
+        ],
+        "properties": {
+          "fontsize": "22",
+          "color": "#ffaa00",
+          "fontweight": "bold"
+        },
+        "dataUid": "uid-2"
+      },
+      {
+        "sourceTag": "text",
+        "type": "custom",
+        "children": [
+          "0 / 20 unlocked"
+        ],
+        "properties": {
+          "name": "ach-count",
+          "fontsize": "11",
+          "color": "#886644"
+        },
+        "dataUid": "uid-3"
+      },
+      {
+        "sourceTag": "container",
+        "type": "custom",
+        "children": [
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] First Blood - Win your first duel"
+            ],
+            "properties": {
+              "name": "ach-0",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-5"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Sharpshooter - 95%+ accuracy"
+            ],
+            "properties": {
+              "name": "ach-1",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-6"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Lightning Draw - Under 300ms reaction"
+            ],
+            "properties": {
+              "name": "ach-2",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-7"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Quick Silver - Under 200ms reaction"
+            ],
+            "properties": {
+              "name": "ach-3",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-8"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Campaign Victor - Beat the campaign"
+            ],
+            "properties": {
+              "name": "ach-4",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-9"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Streak x5 - 5 wins in a row"
+            ],
+            "properties": {
+              "name": "ach-5",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-10"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Streak x10 - 10 wins in a row"
+            ],
+            "properties": {
+              "name": "ach-6",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-11"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Survivor 10 - 10 rounds in survival"
+            ],
+            "properties": {
+              "name": "ach-7",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-12"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Survivor 25 - 25 rounds in survival"
+            ],
+            "properties": {
+              "name": "ach-8",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-13"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Time Lord - 10+ duels in time trial"
+            ],
+            "properties": {
+              "name": "ach-9",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-14"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Perfectionist - Perfect campaign (no losses)"
+            ],
+            "properties": {
+              "name": "ach-10",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-15"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Phantom Slayer - Beat The Phantom"
+            ],
+            "properties": {
+              "name": "ach-11",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-16"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Score 10K - Reach 10,000 career score"
+            ],
+            "properties": {
+              "name": "ach-12",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-17"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Score 50K - Reach 50,000 career score"
+            ],
+            "properties": {
+              "name": "ach-13",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-18"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Duel Master - 100 total duels"
+            ],
+            "properties": {
+              "name": "ach-14",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-19"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Hard Mode Hero - Beat campaign on Hard"
+            ],
+            "properties": {
+              "name": "ach-15",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-20"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Bullseye - 100% accuracy in a duel"
+            ],
+            "properties": {
+              "name": "ach-16",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-21"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Speed Demon - Average under 400ms"
+            ],
+            "properties": {
+              "name": "ach-17",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-22"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Iron Nerves - Win after 4s standoff"
+            ],
+            "properties": {
+              "name": "ach-18",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-23"
+          },
+          {
+            "sourceTag": "text",
+            "type": "custom",
+            "children": [
+              "[ ] Untouchable - 20 survival streak"
+            ],
+            "properties": {
+              "name": "ach-19",
+              "fontsize": "11",
+              "color": "#443322"
+            },
+            "dataUid": "uid-24"
+          }
+        ],
+        "properties": {
+          "flexdirection": "column",
+          "gap": "3",
+          "margintop": "6",
+          "width": "380",
+          "overflow": "scroll"
+        },
+        "dataUid": "uid-4"
+      },
+      {
+        "sourceTag": "text",
+        "type": "custom",
+        "children": [
+          "BACK"
+        ],
+        "properties": {
+          "name": "btn-back",
+          "fontsize": "14",
+          "color": "#886644",
+          "padding": "6",
+          "borderradius": "6",
+          "textalign": "center",
+          "cursor": "pointer",
+          "margintop": "4"
+        },
+        "dataUid": "uid-25"
+      }
+    ],
+    "properties": {
+      "flexdirection": "column",
+      "alignitems": "center",
+      "gap": "4",
+      "padding": "16",
+      "backgroundcolor": "#0a0008ee",
+      "borderradius": "14",
+      "bordercolor": "#ffaa00",
+      "borderwidth": "2",
+      "width": "440",
+      "height": "600"
+    },
+    "dataUid": "uid-1"
+  },
+  "classes": {},
+  "ranges": {
+    "uid-1": {
+      "start": {
+        "line": 0,
+        "column": 0
+      },
+      "end": {
+        "line": 48,
+        "column": 12
+      }
+    },
+    "uid-2": {
+      "start": {
+        "line": 12,
+        "column": 2
+      },
+      "end": {
+        "line": 12,
+        "column": 75
+      }
+    },
+    "uid-3": {
+      "start": {
+        "line": 13,
+        "column": 2
+      },
+      "end": {
+        "line": 13,
+        "column": 77
+      }
+    },
+    "uid-4": {
+      "start": {
+        "line": 15,
+        "column": 2
+      },
+      "end": {
+        "line": 36,
+        "column": 14
+      }
+    },
+    "uid-5": {
+      "start": {
+        "line": 16,
+        "column": 4
+      },
+      "end": {
+        "line": 16,
+        "column": 97
+      }
+    },
+    "uid-6": {
+      "start": {
+        "line": 17,
+        "column": 4
+      },
+      "end": {
+        "line": 17,
+        "column": 92
+      }
+    },
+    "uid-7": {
+      "start": {
+        "line": 18,
+        "column": 4
+      },
+      "end": {
+        "line": 18,
+        "column": 101
+      }
+    },
+    "uid-8": {
+      "start": {
+        "line": 19,
+        "column": 4
+      },
+      "end": {
+        "line": 19,
+        "column": 99
+      }
+    },
+    "uid-9": {
+      "start": {
+        "line": 20,
+        "column": 4
+      },
+      "end": {
+        "line": 20,
+        "column": 99
+      }
+    },
+    "uid-10": {
+      "start": {
+        "line": 21,
+        "column": 4
+      },
+      "end": {
+        "line": 21,
+        "column": 91
+      }
+    },
+    "uid-11": {
+      "start": {
+        "line": 22,
+        "column": 4
+      },
+      "end": {
+        "line": 22,
+        "column": 93
+      }
+    },
+    "uid-12": {
+      "start": {
+        "line": 23,
+        "column": 4
+      },
+      "end": {
+        "line": 23,
+        "column": 99
+      }
+    },
+    "uid-13": {
+      "start": {
+        "line": 24,
+        "column": 4
+      },
+      "end": {
+        "line": 24,
+        "column": 99
+      }
+    },
+    "uid-14": {
+      "start": {
+        "line": 25,
+        "column": 4
+      },
+      "end": {
+        "line": 25,
+        "column": 99
+      }
+    },
+    "uid-15": {
+      "start": {
+        "line": 26,
+        "column": 4
+      },
+      "end": {
+        "line": 26,
+        "column": 109
+      }
+    },
+    "uid-16": {
+      "start": {
+        "line": 27,
+        "column": 4
+      },
+      "end": {
+        "line": 27,
+        "column": 98
+      }
+    },
+    "uid-17": {
+      "start": {
+        "line": 28,
+        "column": 4
+      },
+      "end": {
+        "line": 28,
+        "column": 102
+      }
+    },
+    "uid-18": {
+      "start": {
+        "line": 29,
+        "column": 4
+      },
+      "end": {
+        "line": 29,
+        "column": 102
+      }
+    },
+    "uid-19": {
+      "start": {
+        "line": 30,
+        "column": 4
+      },
+      "end": {
+        "line": 30,
+        "column": 94
+      }
+    },
+    "uid-20": {
+      "start": {
+        "line": 31,
+        "column": 4
+      },
+      "end": {
+        "line": 31,
+        "column": 103
+      }
+    },
+    "uid-21": {
+      "start": {
+        "line": 32,
+        "column": 4
+      },
+      "end": {
+        "line": 32,
+        "column": 99
+      }
+    },
+    "uid-22": {
+      "start": {
+        "line": 33,
+        "column": 4
+      },
+      "end": {
+        "line": 33,
+        "column": 98
+      }
+    },
+    "uid-23": {
+      "start": {
+        "line": 34,
+        "column": 4
+      },
+      "end": {
+        "line": 34,
+        "column": 100
+      }
+    },
+    "uid-24": {
+      "start": {
+        "line": 35,
+        "column": 4
+      },
+      "end": {
+        "line": 35,
+        "column": 97
+      }
+    },
+    "uid-25": {
+      "start": {
+        "line": 38,
+        "column": 2
+      },
+      "end": {
+        "line": 47,
+        "column": 14
+      }
+    }
+  }
+}

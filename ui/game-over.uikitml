@@ -1,0 +1,64 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="8"
+  padding="20"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ff4400"
+  borderWidth="2"
+  width="420"
+  height="500"
+>
+  <text name="go-title" fontSize="32" color="#ff6600" fontWeight="bold">GAME OVER</text>
+  <text name="go-sub" fontSize="14" color="#886644">Campaign Complete</text>
+
+  <container flexDirection="column" gap="4" marginTop="8" width="300">
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Total Score</text>
+      <text name="go-score" fontSize="13" color="#ffaa00" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Duels Won</text>
+      <text name="go-wins" fontSize="13" color="#00ff66" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Duels Lost</text>
+      <text name="go-losses" fontSize="13" color="#ff0044" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Best Reaction</text>
+      <text name="go-best" fontSize="13" color="#ffaa00" fontWeight="bold">--</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Avg Reaction</text>
+      <text name="go-avg" fontSize="13" color="#ff6600" fontWeight="bold">--</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Grade</text>
+      <text name="go-grade" fontSize="13" color="#ff6600" fontWeight="bold">--</text>
+    </container>
+  </container>
+
+  <container flexDirection="column" gap="6" marginTop="10" width="280">
+    <text
+      name="btn-retry"
+      fontSize="18"
+      color="#000000"
+      backgroundColor="#ff6600"
+      padding="10"
+      borderRadius="8"
+      textAlign="center"
+      cursor="pointer"
+    >PLAY AGAIN</text>
+    <text
+      name="btn-menu"
+      fontSize="14"
+      color="#886644"
+      padding="6"
+      borderRadius="6"
+      textAlign="center"
+      cursor="pointer"
+    >MENU</text>
+  </container>
+</container>

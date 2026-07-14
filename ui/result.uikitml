@@ -1,0 +1,60 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="8"
+  padding="20"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ff4400"
+  borderWidth="2"
+  width="420"
+  height="520"
+>
+  <text name="result-title" fontSize="36" color="#00ff66" fontWeight="bold">YOU WIN!</text>
+  <text name="result-sub" fontSize="14" color="#886644">Opponent defeated</text>
+
+  <container flexDirection="column" gap="4" marginTop="6" width="300">
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Reaction Time</text>
+      <text name="reaction-time" fontSize="13" color="#ffaa00" fontWeight="bold">0.342s</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Accuracy</text>
+      <text name="accuracy" fontSize="13" color="#ffaa00" fontWeight="bold">95%</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Speed Rank</text>
+      <text name="speed-rank" fontSize="13" color="#ff6600" fontWeight="bold">FAST</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Score</text>
+      <text name="duel-score" fontSize="13" color="#ffaa00" fontWeight="bold">+1500</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="300">
+      <text fontSize="13" color="#886644">Streak</text>
+      <text name="streak" fontSize="13" color="#ff6600" fontWeight="bold">x1</text>
+    </container>
+  </container>
+
+  <container flexDirection="column" gap="6" marginTop="10" width="280">
+    <text
+      name="btn-next"
+      fontSize="18"
+      color="#000000"
+      backgroundColor="#ff6600"
+      padding="10"
+      borderRadius="8"
+      textAlign="center"
+      cursor="pointer"
+    >NEXT DUEL</text>
+    <text
+      name="btn-menu"
+      fontSize="14"
+      color="#886644"
+      padding="6"
+      borderRadius="6"
+      textAlign="center"
+      cursor="pointer"
+    >MENU</text>
+  </container>
+</container>

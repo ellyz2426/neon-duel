@@ -1,0 +1,71 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  justifyContent="center"
+  gap="10"
+  padding="20"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ff4400"
+  borderWidth="2"
+  width="440"
+  height="600"
+>
+  <text name="title" fontSize="42" color="#ff6600" fontWeight="bold">NEON DUEL</text>
+  <text fontSize="14" color="#886644">VR Quickdraw Showdown</text>
+
+  <container flexDirection="column" gap="7" marginTop="14" width="300">
+    <text
+      name="btn-play"
+      fontSize="22"
+      color="#000000"
+      backgroundColor="#ff6600"
+      padding="12"
+      borderRadius="8"
+      textAlign="center"
+      cursor="pointer"
+      hover-backgroundColor="#ff8833"
+    >PLAY</text>
+
+    <text
+      name="btn-settings"
+      fontSize="15"
+      color="#ff6600"
+      backgroundColor="#1a0800"
+      padding="7"
+      borderRadius="6"
+      textAlign="center"
+      cursor="pointer"
+      borderColor="#ff6600"
+      borderWidth="1"
+    >SETTINGS</text>
+
+    <text
+      name="btn-achieve"
+      fontSize="15"
+      color="#ffaa00"
+      backgroundColor="#1a1200"
+      padding="7"
+      borderRadius="6"
+      textAlign="center"
+      cursor="pointer"
+      borderColor="#ffaa00"
+      borderWidth="1"
+    >ACHIEVEMENTS</text>
+
+    <text
+      name="btn-stats"
+      fontSize="15"
+      color="#aa88ff"
+      backgroundColor="#0f0a1a"
+      padding="7"
+      borderRadius="6"
+      textAlign="center"
+      cursor="pointer"
+      borderColor="#aa88ff"
+      borderWidth="1"
+    >STATS</text>
+  </container>
+
+  <text name="version" fontSize="10" color="#443322" marginTop="8">v1.0</text>
+</container>

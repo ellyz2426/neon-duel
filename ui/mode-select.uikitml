@@ -1,0 +1,87 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="8"
+  padding="18"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ff4400"
+  borderWidth="2"
+  width="440"
+  height="580"
+>
+  <text fontSize="26" color="#ff6600" fontWeight="bold">SELECT MODE</text>
+
+  <container flexDirection="column" gap="6" marginTop="8" width="340">
+    <container
+      name="btn-campaign"
+      flexDirection="column"
+      alignItems="center"
+      padding="10"
+      backgroundColor="#1a0500"
+      borderRadius="8"
+      borderColor="#ff6600"
+      borderWidth="1"
+      cursor="pointer"
+    >
+      <text fontSize="18" color="#ff6600" fontWeight="bold">CAMPAIGN</text>
+      <text name="campaign-info" fontSize="11" color="#886644">Face 10 outlaws -- fastest wins</text>
+    </container>
+
+    <container
+      name="btn-quickdraw"
+      flexDirection="column"
+      alignItems="center"
+      padding="10"
+      backgroundColor="#001a0a"
+      borderRadius="8"
+      borderColor="#00ff66"
+      borderWidth="1"
+      cursor="pointer"
+    >
+      <text fontSize="18" color="#00ff66" fontWeight="bold">QUICK DRAW</text>
+      <text fontSize="11" color="#448866">Single duel -- beat your best time</text>
+    </container>
+
+    <container
+      name="btn-survival"
+      flexDirection="column"
+      alignItems="center"
+      padding="10"
+      backgroundColor="#1a0000"
+      borderRadius="8"
+      borderColor="#ff0044"
+      borderWidth="1"
+      cursor="pointer"
+    >
+      <text fontSize="18" color="#ff0044" fontWeight="bold">SURVIVAL</text>
+      <text fontSize="11" color="#884422">3 misses and you are out</text>
+    </container>
+
+    <container
+      name="btn-timetrial"
+      flexDirection="column"
+      alignItems="center"
+      padding="10"
+      backgroundColor="#0a0a1a"
+      borderRadius="8"
+      borderColor="#4488ff"
+      borderWidth="1"
+      cursor="pointer"
+    >
+      <text fontSize="18" color="#4488ff" fontWeight="bold">TIME TRIAL</text>
+      <text fontSize="11" color="#446688">60 seconds -- max duels</text>
+    </container>
+  </container>
+
+  <text
+    name="btn-back"
+    fontSize="14"
+    color="#886644"
+    padding="6"
+    borderRadius="6"
+    textAlign="center"
+    cursor="pointer"
+    marginTop="4"
+  >BACK</text>
+</container>

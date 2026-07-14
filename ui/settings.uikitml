@@ -1,0 +1,87 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="8"
+  padding="18"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ff4400"
+  borderWidth="2"
+  width="420"
+  height="460"
+>
+  <text fontSize="24" color="#ff6600" fontWeight="bold">SETTINGS</text>
+
+  <container flexDirection="column" gap="8" marginTop="8" width="320">
+    <container flexDirection="row" justifyContent="space-between" alignItems="center" width="320">
+      <text fontSize="14" color="#886644">Difficulty</text>
+      <text
+        name="btn-diff"
+        fontSize="14"
+        color="#ff6600"
+        backgroundColor="#1a0800"
+        padding="6"
+        borderRadius="6"
+        cursor="pointer"
+        borderColor="#ff6600"
+        borderWidth="1"
+      >NORMAL</text>
+    </container>
+
+    <container flexDirection="row" justifyContent="space-between" alignItems="center" width="320">
+      <text fontSize="14" color="#886644">SFX Volume</text>
+      <text
+        name="btn-sfx"
+        fontSize="14"
+        color="#ffaa00"
+        backgroundColor="#1a1200"
+        padding="6"
+        borderRadius="6"
+        cursor="pointer"
+        borderColor="#ffaa00"
+        borderWidth="1"
+      >100%</text>
+    </container>
+
+    <container flexDirection="row" justifyContent="space-between" alignItems="center" width="320">
+      <text fontSize="14" color="#886644">Music</text>
+      <text
+        name="btn-music"
+        fontSize="14"
+        color="#00ff66"
+        backgroundColor="#001a0a"
+        padding="6"
+        borderRadius="6"
+        cursor="pointer"
+        borderColor="#00ff66"
+        borderWidth="1"
+      >ON</text>
+    </container>
+
+    <container flexDirection="row" justifyContent="space-between" alignItems="center" width="320">
+      <text fontSize="14" color="#886644">Crosshair</text>
+      <text
+        name="btn-crosshair"
+        fontSize="14"
+        color="#00ccff"
+        backgroundColor="#001020"
+        padding="6"
+        borderRadius="6"
+        cursor="pointer"
+        borderColor="#00ccff"
+        borderWidth="1"
+      >CYAN</text>
+    </container>
+  </container>
+
+  <text
+    name="btn-back"
+    fontSize="14"
+    color="#886644"
+    padding="6"
+    borderRadius="6"
+    textAlign="center"
+    cursor="pointer"
+    marginTop="10"
+  >BACK</text>
+</container>

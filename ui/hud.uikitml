@@ -1,0 +1,31 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="6"
+  padding="12"
+  backgroundColor="#00000088"
+  borderRadius="10"
+  width="380"
+  height="120"
+>
+  <text name="mode-label" fontSize="12" color="#886644">CAMPAIGN</text>
+  <text name="opponent-label" fontSize="16" color="#ff6600" fontWeight="bold">vs. Dusty Dan</text>
+  <container flexDirection="row" gap="20" alignItems="center">
+    <container flexDirection="column" alignItems="center">
+      <text name="score-label" fontSize="24" color="#ffaa00" fontWeight="bold">0</text>
+      <text fontSize="10" color="#886644">SCORE</text>
+    </container>
+    <container flexDirection="column" alignItems="center">
+      <text name="round-label" fontSize="18" color="#ff6600">1/10</text>
+      <text fontSize="10" color="#886644">ROUND</text>
+    </container>
+    <container flexDirection="column" alignItems="center">
+      <text name="lives-label" fontSize="18" color="#ff0044">---</text>
+      <text fontSize="10" color="#886644">LIVES</text>
+    </container>
+    <container flexDirection="column" alignItems="center">
+      <text name="timer-label" fontSize="18" color="#4488ff">--</text>
+      <text fontSize="10" color="#886644">TIME</text>
+    </container>
+  </container>
+</container>

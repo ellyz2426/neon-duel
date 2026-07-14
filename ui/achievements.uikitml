@@ -1,0 +1,49 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="4"
+  padding="16"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#ffaa00"
+  borderWidth="2"
+  width="440"
+  height="600"
+>
+  <text fontSize="22" color="#ffaa00" fontWeight="bold">ACHIEVEMENTS</text>
+  <text name="ach-count" fontSize="11" color="#886644">0 / 20 unlocked</text>
+
+  <container flexDirection="column" gap="3" marginTop="6" width="380" overflow="scroll">
+    <text name="ach-0" fontSize="11" color="#443322">[ ] First Blood - Win your first duel</text>
+    <text name="ach-1" fontSize="11" color="#443322">[ ] Sharpshooter - 95%+ accuracy</text>
+    <text name="ach-2" fontSize="11" color="#443322">[ ] Lightning Draw - Under 300ms reaction</text>
+    <text name="ach-3" fontSize="11" color="#443322">[ ] Quick Silver - Under 200ms reaction</text>
+    <text name="ach-4" fontSize="11" color="#443322">[ ] Campaign Victor - Beat the campaign</text>
+    <text name="ach-5" fontSize="11" color="#443322">[ ] Streak x5 - 5 wins in a row</text>
+    <text name="ach-6" fontSize="11" color="#443322">[ ] Streak x10 - 10 wins in a row</text>
+    <text name="ach-7" fontSize="11" color="#443322">[ ] Survivor 10 - 10 rounds in survival</text>
+    <text name="ach-8" fontSize="11" color="#443322">[ ] Survivor 25 - 25 rounds in survival</text>
+    <text name="ach-9" fontSize="11" color="#443322">[ ] Time Lord - 10+ duels in time trial</text>
+    <text name="ach-10" fontSize="11" color="#443322">[ ] Perfectionist - Perfect campaign (no losses)</text>
+    <text name="ach-11" fontSize="11" color="#443322">[ ] Phantom Slayer - Beat The Phantom</text>
+    <text name="ach-12" fontSize="11" color="#443322">[ ] Score 10K - Reach 10,000 career score</text>
+    <text name="ach-13" fontSize="11" color="#443322">[ ] Score 50K - Reach 50,000 career score</text>
+    <text name="ach-14" fontSize="11" color="#443322">[ ] Duel Master - 100 total duels</text>
+    <text name="ach-15" fontSize="11" color="#443322">[ ] Hard Mode Hero - Beat campaign on Hard</text>
+    <text name="ach-16" fontSize="11" color="#443322">[ ] Bullseye - 100% accuracy in a duel</text>
+    <text name="ach-17" fontSize="11" color="#443322">[ ] Speed Demon - Average under 400ms</text>
+    <text name="ach-18" fontSize="11" color="#443322">[ ] Iron Nerves - Win after 4s standoff</text>
+    <text name="ach-19" fontSize="11" color="#443322">[ ] Untouchable - 20 survival streak</text>
+  </container>
+
+  <text
+    name="btn-back"
+    fontSize="14"
+    color="#886644"
+    padding="6"
+    borderRadius="6"
+    textAlign="center"
+    cursor="pointer"
+    marginTop="4"
+  >BACK</text>
+</container>

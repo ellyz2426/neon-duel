@@ -1,0 +1,64 @@
+<container
+  flexDirection="column"
+  alignItems="center"
+  gap="6"
+  padding="18"
+  backgroundColor="#0a0008ee"
+  borderRadius="14"
+  borderColor="#aa88ff"
+  borderWidth="2"
+  width="420"
+  height="480"
+>
+  <text fontSize="24" color="#aa88ff" fontWeight="bold">STATISTICS</text>
+
+  <container flexDirection="column" gap="5" marginTop="8" width="320">
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Total Duels</text>
+      <text name="st-duels" fontSize="13" color="#ffaa00" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Wins / Losses</text>
+      <text name="st-record" fontSize="13" color="#00ff66" fontWeight="bold">0 / 0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Win Rate</text>
+      <text name="st-winrate" fontSize="13" color="#ff6600" fontWeight="bold">--%</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Best Reaction</text>
+      <text name="st-best" fontSize="13" color="#ffaa00" fontWeight="bold">--</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Avg Reaction</text>
+      <text name="st-avg" fontSize="13" color="#ff6600" fontWeight="bold">--</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Career Score</text>
+      <text name="st-score" fontSize="13" color="#ffaa00" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Best Streak</text>
+      <text name="st-streak" fontSize="13" color="#ff6600" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Campaigns Won</text>
+      <text name="st-campaigns" fontSize="13" color="#ff6600" fontWeight="bold">0</text>
+    </container>
+    <container flexDirection="row" justifyContent="space-between" width="320">
+      <text fontSize="13" color="#886644">Play Time</text>
+      <text name="st-time" fontSize="13" color="#886644">0m</text>
+    </container>
+  </container>
+
+  <text
+    name="btn-back"
+    fontSize="14"
+    color="#886644"
+    padding="6"
+    borderRadius="6"
+    textAlign="center"
+    cursor="pointer"
+    marginTop="6"
+  >BACK</text>
+</container>

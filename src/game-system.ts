@@ -36,7 +36,7 @@ import {
   Object3D,
 } from '@iwsdk/core';
 
-// ── Types ──────────────────────────────────────────────────────────────────
+// -- Types ------------------------------------------------------------------
 
 enum GS { MENU, MODE_SELECT, PRE_DUEL, STANDOFF, DRAW, RESULT, GAME_OVER }
 enum GM { CAMPAIGN, QUICK_DRAW, SURVIVAL, TIME_TRIAL }
@@ -107,7 +107,7 @@ const ACH_NAMES = [
   'Untouchable - 20 survival streak',
 ];
 
-// ── Audio helpers ──────────────────────────────────────────────────────────
+// -- Audio helpers ----------------------------------------------------------
 
 let audioCtx: AudioContext | null = null;
 let masterGain: GainNode | null = null;
@@ -295,7 +295,7 @@ function stopMusic() {
   musicOscs = [];
 }
 
-// ── Save/Load ──────────────────────────────────────────────────────────────
+// -- Save/Load --------------------------------------------------------------
 
 const DEFAULT_SAVE: SaveData = {
   totalDuels: 0, wins: 0, losses: 0, bestReaction: Infinity,
@@ -336,7 +336,7 @@ function unlockAch(idx: number): boolean {
 
 loadSave();
 
-// ── 3D helpers ─────────────────────────────────────────────────────────────
+// -- 3D helpers -------------------------------------------------------------
 
 function createOpponentModel(data: OpponentData): Group {
   const g = new Group();
@@ -493,7 +493,7 @@ function updateDrawText(
   texture.needsUpdate = true;
 }
 
-// ── Tumbleweed ─────────────────────────────────────────────────────────────
+// -- Tumbleweed -------------------------------------------------------------
 
 function createTumbleweed(): Group {
   const g = new Group();
@@ -516,7 +516,7 @@ function createTumbleweed(): Group {
   return g;
 }
 
-// ── Game System ────────────────────────────────────────────────────────────
+// -- Game System ------------------------------------------------------------
 
 export class GameSystem extends createSystem({
   mainMenu: { required: [PanelUI, PanelDocument], where: [eq(PanelUI, 'config', './ui/main-menu.json')] },
@@ -567,6 +567,7 @@ export class GameSystem extends createSystem({
   // Panels
   private panelEntities: Record<string, any> = {};
   private panelDocs: Record<string, UIKitDocument> = {};
+  private hudDetached = true;
 
   // Flash effects
   private flashMesh: Mesh | null = null;
@@ -593,7 +594,7 @@ export class GameSystem extends createSystem({
   init() {
     const world = this.world as unknown as World;
 
-    // ── Lighting ──
+    // -- Lighting --
     const ambient = new AmbientLight(0x221111, 0.4);
     world.scene.add(ambient);
     const dir = new DirectionalLight(0xff6633, 0.6);
@@ -601,35 +602,35 @@ export class GameSystem extends createSystem({
     world.scene.add(dir);
     world.scene.fog = new Fog(0x050005, 10, 80);
 
-    // ── Floor ──
+    // -- Floor --
     const grid = createFloorGrid(60, 30, 0xff4400);
     world.scene.add(grid);
 
-    // ── Buildings / environment ──
+    // -- Buildings / environment --
     this.createEnvironment(world);
 
-    // ── Opponent placeholder (created per duel) ──
+    // -- Opponent placeholder (created per duel) --
     this.opponentGroup = new Group();
     this.opponentGroup.position.set(0, 0, -12);
     world.scene.add(this.opponentGroup);
 
-    // ── Muzzle flashes ──
+    // -- Muzzle flashes --
     this.muzzleFlash = createMuzzleFlash();
     world.scene.add(this.muzzleFlash);
     this.playerMuzzle = createMuzzleFlash();
     this.playerMuzzle.position.set(0, 1.2, -0.5);
     world.scene.add(this.playerMuzzle);
 
-    // ── Impact particles ──
+    // -- Impact particles --
     this.impactParticles = createImpactParticles();
     world.scene.add(this.impactParticles);
 
-    // ── Draw text ──
+    // -- Draw text --
     this.drawTextObj = createDrawText();
     this.drawTextObj.group.position.set(0, 3.5, -6);
     world.scene.add(this.drawTextObj.group);
 
-    // ── Tumbleweeds ──
+    // -- Tumbleweeds --
     for (let i = 0; i < 3; i++) {
       const tw = createTumbleweed();
       tw.position.set(-20 + Math.random() * 40, 0.2, -5 + Math.random() * -10);
@@ -641,7 +642,7 @@ export class GameSystem extends createSystem({
       });
     }
 
-    // ── Dust particles ──
+    // -- Dust particles --
     const dustMat = new MeshBasicMaterial({ color: 0x886644, transparent: true, opacity: 0.2 });
     for (let i = 0; i < 40; i++) {
       const p = new Mesh(new BoxGeometry(0.03, 0.03, 0.03), dustMat);
@@ -657,7 +658,7 @@ export class GameSystem extends createSystem({
       this.dustParticles.push(p);
     }
 
-    // ── Ambient motes ──
+    // -- Ambient motes --
     const moteMat = new MeshBasicMaterial({ color: 0xff6600, transparent: true, opacity: 0.15 });
     for (let i = 0; i < 20; i++) {
       const m = new Mesh(new SphereGeometry(0.02, 4, 4), moteMat);
@@ -671,21 +672,21 @@ export class GameSystem extends createSystem({
       this.ambientMotes.push(m);
     }
 
-    // ── Crosshair (browser mode) ──
+    // -- Crosshair (browser mode) --
     const chMat = new MeshBasicMaterial({ color: 0x00ccff, transparent: true, opacity: 0.8, depthTest: false });
     this.crosshairMesh = new Mesh(new SphereGeometry(0.015, 8, 8), chMat);
     this.crosshairMesh.renderOrder = 999;
     this.crosshairMesh.visible = false;
     world.scene.add(this.crosshairMesh);
 
-    // ── Flash overlay ──
+    // -- Flash overlay --
     const flashMat = new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthTest: false });
     this.flashMesh = new Mesh(new BoxGeometry(0.5, 0.3, 0.01), flashMat);
     this.flashMesh.renderOrder = 1000;
     this.flashMesh.position.set(0, 0, -0.3);
     world.camera.add(this.flashMesh);
 
-    // ── Achievement notification ──
+    // -- Achievement notification --
     const achCanvas = document.createElement('canvas');
     achCanvas.width = 512;
     achCanvas.height = 64;
@@ -700,7 +701,7 @@ export class GameSystem extends createSystem({
     this.achNotifyGroup.visible = false;
     world.camera.add(this.achNotifyGroup);
 
-    // ── Mouse listeners ──
+    // -- Mouse listeners --
     const canvas = world.renderer.domElement;
     canvas.addEventListener('mousemove', (e: MouseEvent) => {
       this.mouseNDC.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -711,7 +712,7 @@ export class GameSystem extends createSystem({
       ensureAudio();
     });
 
-    // ── Create panels ──
+    // -- Create panels --
     this.createPanels(world);
     this.playStartTime = Date.now();
     startMusic();
@@ -782,10 +783,11 @@ export class GameSystem extends createSystem({
   }
 
   private createPanels(world: World) {
+    // Panel configs: [name, x, y, z, isHud, initiallyVisible]
     const configs: [string, number, number, number, boolean, boolean][] = [
       ['main-menu',    0,   1.5,  -3,  false, true],
       ['mode-select',  0,   1.5,  -3,  false, false],
-      ['hud',          0,   2.4,  -2.5, true,  false],
+      ['hud',          0,   0.12, -0.6, true,  false],
       ['result',       0,   1.5,  -3,  false, false],
       ['game-over',    0,   1.5,  -3,  false, false],
       ['settings',     0,   1.5,  -3,  false, false],
@@ -795,13 +797,19 @@ export class GameSystem extends createSystem({
 
     for (const [name, x, y, z, isHud, visible] of configs) {
       const entity = world.createTransformEntity(undefined, { persistent: true });
-      entity.object3D!.position.set(x, y, z);
       entity.addComponent(PanelUI, { config: `./ui/${name}.json` });
       if (isHud) {
-        entity.addComponent(Follower, { target: world.player.children[0] || world.player });
-        entity.addComponent(ScreenSpace, {});
+        // HUD follows player head - but don't add ScreenSpace/Follower yet
+        // They will be added when gameplay starts (ScreenSpace renders regardless of scene graph)
+        entity.object3D!.position.set(x, -100, z);
+        entity.object3D!.visible = false;
       } else {
-        entity.addComponent(ScreenSpace, {});
+        // Menu panels in world space - no ScreenSpace
+        if (visible) {
+          entity.object3D!.position.set(x, y, z);
+        } else {
+          entity.object3D!.position.set(x, -100, z); // off-screen until shown
+        }
       }
       entity.object3D!.visible = visible;
       this.panelEntities[name] = entity;
@@ -829,8 +837,37 @@ export class GameSystem extends createSystem({
   }
 
   private showPanel(name: string) {
+    const world = this.world as unknown as World;
     for (const [key, ent] of Object.entries(this.panelEntities)) {
-      if (ent?.object3D) ent.object3D.visible = (key === name || (name === 'gameplay' && key === 'hud'));
+      if (!ent?.object3D) continue;
+      const shouldShow = (key === name || (name === 'gameplay' && key === 'hud'));
+      ent.object3D.visible = shouldShow;
+      if (key === 'hud') {
+        // ScreenSpace renders independently of scene graph - must add/remove the component
+        if (shouldShow && this.hudDetached) {
+          ent.object3D.position.set(0, 0.12, -0.6);
+          if (!ent.hasComponent(Follower)) {
+            ent.addComponent(Follower, { target: world.player.children[0] || world.player });
+          }
+          if (!ent.hasComponent(ScreenSpace)) {
+            ent.addComponent(ScreenSpace, {});
+          }
+          this.hudDetached = false;
+        } else if (!shouldShow && !this.hudDetached) {
+          if (ent.hasComponent(ScreenSpace)) {
+            ent.removeComponent(ScreenSpace);
+          }
+          if (ent.hasComponent(Follower)) {
+            ent.removeComponent(Follower);
+          }
+          ent.object3D.position.y = -100;
+          this.hudDetached = true;
+        }
+      } else if (!shouldShow) {
+        ent.object3D.position.y = -100;
+      } else {
+        ent.object3D.position.set(0, 1.5, -3);
+      }
     }
   }
 
@@ -861,7 +898,7 @@ export class GameSystem extends createSystem({
     this.achNotifyTimer = 3.0;
   }
 
-  // ── Panel bindings ───────────────────────────────────────────────────────
+  // -- Panel bindings -------------------------------------------------------
 
   private bindMainMenu(entity: any) {
     const doc = this.getDoc(entity);
@@ -1027,7 +1064,7 @@ export class GameSystem extends createSystem({
     this.setText(doc, 'st-time', mins < 60 ? `${mins}m` : `${Math.floor(mins / 60)}h ${mins % 60}m`);
   }
 
-  // ── Game flow ────────────────────────────────────────────────────────────
+  // -- Game flow ------------------------------------------------------------
 
   private startMode(mode: GM) {
     this.mode = mode;
@@ -1405,14 +1442,14 @@ export class GameSystem extends createSystem({
   }
   private _prevAch: boolean[] = [...save.achievements];
 
-  // ── Update loop ──────────────────────────────────────────────────────────
+  // -- Update loop ----------------------------------------------------------
 
   update(delta: number, _time: number) {
     const world = this.world as unknown as World;
     const dt = delta;
     this.stateTimer += dt;
 
-    // ── Flash decay ──
+    // -- Flash decay --
     if (this.flashTimer > 0) {
       this.flashTimer -= dt;
       if (this.flashMesh) {
@@ -1421,7 +1458,7 @@ export class GameSystem extends createSystem({
       }
     }
 
-    // ── Achievement notification decay ──
+    // -- Achievement notification decay --
     if (this.achNotifyTimer > 0) {
       this.achNotifyTimer -= dt;
       if (this.achNotifyTimer <= 0 && this.achNotifyGroup) {
@@ -1429,7 +1466,7 @@ export class GameSystem extends createSystem({
       }
     }
 
-    // ── Tumbleweeds ──
+    // -- Tumbleweeds --
     this.tumbleweeds.forEach(tw => {
       tw.group.position.x += tw.vel.x * dt;
       tw.group.position.z += tw.vel.z * dt;
@@ -1439,19 +1476,19 @@ export class GameSystem extends createSystem({
       if (tw.group.position.x < -25) tw.group.position.x = 25;
     });
 
-    // ── Dust ──
+    // -- Dust --
     this.dustParticles.forEach(p => {
       p.position.y = p.userData.baseY + Math.sin(_time * p.userData.speed + p.userData.drift) * 0.3;
       p.position.x += 0.1 * dt;
       if (p.position.x > 15) p.position.x = -15;
     });
 
-    // ── Ambient motes ──
+    // -- Ambient motes --
     this.ambientMotes.forEach(m => {
       m.position.y += Math.sin(_time * 0.5 + m.userData.phase) * 0.002;
     });
 
-    // ── Muzzle flash decay ──
+    // -- Muzzle flash decay --
     if (this.muzzleFlash?.visible) {
       this.muzzleFlash.children.forEach(c => {
         const mat = (c as Mesh).material as MeshBasicMaterial;
@@ -1467,7 +1504,7 @@ export class GameSystem extends createSystem({
       });
     }
 
-    // ── Impact particles ──
+    // -- Impact particles --
     if (this.impactParticles?.visible) {
       let allDone = true;
       this.impactParticles.children.forEach(c => {
@@ -1484,7 +1521,7 @@ export class GameSystem extends createSystem({
       if (allDone) this.impactParticles.visible = false;
     }
 
-    // ── State machine ──
+    // -- State machine --
     if (this.state === GS.PRE_DUEL) {
       // Brief pause before standoff
       if (this.stateTimer > 1.5) {
